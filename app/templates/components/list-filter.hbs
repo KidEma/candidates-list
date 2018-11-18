@@ -1,0 +1,14 @@
+{{!-- {{input
+  value=value
+  key-up=(action "handleFilterEntry")
+  class="light"
+  placeholder="Filter By Skills"
+}} --}}
+{{paper-input 
+class="flex" 
+label="Filter by skill" 
+placeholder="Enter name" 
+value=value 
+onKeyUp=(action "handleFilterEntry")
+onChange=(action (mut value))}}
+{{yield results}}

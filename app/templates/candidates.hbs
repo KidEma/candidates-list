@@ -1,5 +1,16 @@
 
-<div class="jumbo">
-  <div class="right tomster"></div>
-  {{people-list title="List of Candidates" people=model}}
+
+
+{{#list-filter
+ filter=(action "filterBySkill")
+as |filteredResults|
+}}
+<div class="layout-row layout-align-center-center layout-wrap">
+    {{#each filteredResults as |candidate|}}
+      {{people-list person=candidate}}
+    {{/each}}
 </div>
+
+{{/list-filter}}
+
+{{outlet}}

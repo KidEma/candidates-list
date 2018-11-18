@@ -5,9 +5,11 @@ import {
   visit 
 } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
+import setupMirage from 'ember-cli-mirage/addon-test-support/setup-mirage/'
 
 module('Acceptance | list candidates', function(hooks) {
   setupApplicationTest(hooks);
+  setupMirage(hooks);
 
   test('should show candidates as the home page', async function (assert) {
     await visit('/');
