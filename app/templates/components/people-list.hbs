@@ -1,20 +1,31 @@
+  {{#unless person.hidden}}
 <div class="layout-row flex-gt-xs-25">
+
  {{#paper-card as |card|}}
       {{#card.title as |title|}}
         {{#title.text as |text|}}
           {{#text.headline}}{{person.login}}{{/text.headline}}
         {{/title.text}}
      {{ title.media size="sm" src=person.avatar_url alt=person.login title=person.login }}
-
       {{/card.title}}
-
       {{#card.actions class="layout-row layout-align-start-center" as |actions|}}
         {{#actions.icons}}
-          {{#paper-button iconButton=true}}{{paper-icon 'favorite'}}{{/paper-button}}
-          {{#paper-button iconButton=true}}{{paper-icon 'share'}}{{/paper-button}}
+          {{#paper-button iconButton=true accent=person.favourite
+          onClick=(action "toggleFavourite" person)
+          }}
+            {{ paper-icon 'favorite' }}
+          {{/paper-button}}
+          {{#paper-button iconButton=true
+              onClick=(action "shareContact" person)}}
+              {{
+                paper-icon 'share'
+              }}
+          {{/paper-button}}
         {{/actions.icons}}
-        {{#paper-button}}Contact{{/paper-button}}
-        {{#paper-button}}Hide{{/paper-button}}
+        {{#paper-button}}Github{{/paper-button}}
+        {{#paper-button
+          onClick=(action "toggleHidden" person)
+        }}Hide{{/paper-button}}
       {{/card.actions}}
       {{#card.content}}
       <div style="max-width: 280px">
@@ -29,3 +40,5 @@
       {{/card.content}}
    {{/paper-card}}
     </div>
+
+   {{/unless}}

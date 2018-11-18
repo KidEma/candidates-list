@@ -109,7 +109,9 @@ export default function() {
       "received_events_url": "https://api.github.com/users/AmyDayday/received_events",
       "type": "User",
       "site_admin": false,
-      "score": 82.38
+      "score": 82.38,
+      "skills": ['.net', "HTML5", 'CSS3', 'Typescript']
+
     },
     {
       "login": "JavascriptIsMagic",
@@ -151,7 +153,8 @@ export default function() {
       "received_events_url": "https://api.github.com/users/JavascriptMick/received_events",
       "type": "User",
       "site_admin": false,
-      "score": 78.96672
+      "score": 78.96672,
+      "skills": ['reactjs', "HTML5", 'CSS3', 'Typescript']
     },
     {
       "login": "javascriptDev",
@@ -172,7 +175,8 @@ export default function() {
       "received_events_url": "https://api.github.com/users/javascriptDev/received_events",
       "type": "User",
       "site_admin": false,
-      "score": 76.70459
+      "score": 76.70459,
+      "skills": ['reactjs', "HTML5", 'web applications', 'Typescript']
     },
     {
       "login": "javascriptisscary",
@@ -235,7 +239,8 @@ export default function() {
       "received_events_url": "https://api.github.com/users/luckyscc/received_events",
       "type": "User",
       "site_admin": false,
-      "score": 68.103355
+      "score": 68.103355,
+      "skills": ['nodejs', "HTML5", 'C#', 'javascript']
     },]
   };
   
@@ -250,6 +255,9 @@ export default function() {
         score: x.score,
         type: x.type,
         url: x.url,
+        favourite: false,
+        hidden: false,
+        contacted: false,
         skills: x.skills
       }
     }

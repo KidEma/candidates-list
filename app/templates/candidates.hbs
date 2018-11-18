@@ -1,16 +1,12 @@
-
-
-
 {{#list-filter
- filter=(action "filterBySkill")
-as |filteredResults|
+  filter=(action "filterBySkill")
+  as |filteredResults|
 }}
+{{!-- TODO: implement virtualization --}}
 <div class="layout-row layout-align-center-center layout-wrap">
     {{#each filteredResults as |candidate|}}
       {{people-list person=candidate}}
     {{/each}}
 </div>
-
 {{/list-filter}}
-
 {{outlet}}

@@ -5,7 +5,11 @@ import {
   visit 
 } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
-import setupMirage from 'ember-cli-mirage/addon-test-support/setup-mirage/'
+import setupMirage from 'ember-cli-mirage/addon-test-support/setup-mirage/';
+import { resolve } from 'rsvp';
+
+const ITEMS = [{skills: ['javascript']}, {skills: ['python']}, {skills: ['.NET']}];
+const FILTERED_ITEMS = [{skills: 'javascript'}];
 
 module('Acceptance | list candidates', function(hooks) {
   setupApplicationTest(hooks);
@@ -31,7 +35,11 @@ module('Acceptance | list candidates', function(hooks) {
   test('should link to candidates profile on source.', async function (assert) {
   });
 
-  test('should link to contact information.', async function (assert) {
+  test('should open contact form', async function (assert) {
+  });
+
+  test('should initially load all listings', async function (assert) {
+    this.set('filterBySkill', () => resolve({ results: ITEMS }));
   });
 
   test('should list available candidates.', async function (assert) {
@@ -42,6 +50,6 @@ module('Acceptance | list candidates', function(hooks) {
   test('should filter the list of candiates by skills.', async function (assert) {
   });
 
-  test('should show details for a selected candidate', async function (assert) {
+  test('should filter favourites', async function (assert) {
   });
 });

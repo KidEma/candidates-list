@@ -23,5 +23,8 @@ export default DS.Model.extend({
     "type": DS.attr(),
     "site_admin": DS.attr(),
     "score": DS.attr(),
+    "favourite": DS.attr(),
+    "hidden": DS.attr(),
+    "contacted": DS.attr(),
     "skills": DS.attr(),
 });
