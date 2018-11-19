@@ -6,13 +6,14 @@
 }} --}}
 <div class="layout-row">
   <div class="layout-column">
-  {{paper-input
-  class="flex-50" 
-  label="Filter by skill" 
-  placeholder="Enter name" 
-  value=value 
-  onKeyUp=(action "handleFilterEntry")
-  onChange=(action (mut value))}}
+    {{paper-input
+      class="flex-50" 
+      label="Filter by skill" 
+      placeholder="Enter name" 
+      value=value 
+      onKeyUp=(action "handleFilterEntry")
+      onChange=(action (mut value))
+    }}
   </div>
 </div>
 {{yield results}}

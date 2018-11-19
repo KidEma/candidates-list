@@ -1,1 +1,6 @@
 @import 'ember-paper';
+.people-list {
+    &-fixed-width {
+        max-width: 280px;
+    }
+}
